@@ -1,0 +1,17 @@
+all:
+  children:
+    iranserver:
+      children:
+        mail-servers:
+          hosts:
+            cloud1:
+              ansible_host: 192.168.56.111
+              ansible_user: vagrant
+              ansible_port: 22
+
+        web-servers:
+          hosts:
+            c2:
+              ansible_host: 192.168.56.111
+              ansible_user: vagrant
+              ansible_port: 22
