@@ -1,0 +1,6 @@
+- name: update and upgrade
+  hosts: c2
+  gather_facts: true
+  become: true
+  roles:
+    - { role: preparing }
