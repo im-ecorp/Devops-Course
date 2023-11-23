@@ -1,0 +1,13 @@
+---
+# tasks file for preparing
+
+- name: update and upgrade os
+  ansible.builtin.apt:
+    update_cache: yes
+    upgrade: safe
+    autoclean: yes
+    autoremove: yes
+
+- name: Set a hostname
+  ansible.builtin.hostname:
+    name: {{ }}
