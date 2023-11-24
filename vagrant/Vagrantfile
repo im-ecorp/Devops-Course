@@ -1,4 +1,4 @@
-IMAGE_2004 = "debian/bookworm64"
+IMAGE1 = "debian/bookworm64"
 
 ENV['VAGRANT_NO_PARALLEL'] = 'yes'
 
@@ -8,7 +8,7 @@ Vagrant.configure(2) do |config|
   (1..NodeType1).each do |no1_id|
 
     config.vm.define "vmbox1#{no1_id}" do |vmbox1|
-      vmbox1.vm.box = IMAGE_2004
+      vmbox1.vm.box = IMAGE1
       vmbox1.vm.hostname = "vmbox1#{no1_id}"
       vmbox1.vm.network "private_network", ip: "192.168.56.11#{no1_id}"
       vmbox1.vm.provider "virtualbox" do |v|
@@ -22,7 +22,7 @@ Vagrant.configure(2) do |config|
   NodeType2 = 2
   (1..NodeType2).each do |no2_id|
     config.vm.define "vmbox1#{no2_id}" do |vmbox2|
-      vmbox2.vm.box = IMAGE_2004
+      vmbox2.vm.box = IMAGE1
       vmbox2.vm.hostname = "vmbox1#{no2_id}"
       vmbox2.vm.network "private_network", ip: "192.168.56.11#{no2_id}"
       vmbox2.vm.provider "virtualbox" do |v|
