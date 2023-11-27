@@ -10,4 +10,19 @@
 
 - name: Set a hostname
   ansible.builtin.hostname:
-    name: {{ }}
+    name: "{{ inventory_hostname }}"
+
+
+- name: Install a list of packages
+  ansible.builtin.apt:
+    pkg:
+    - vim
+    - curl
+    - wget
+    - git
+    - htop
+    - iotop
+    - bash-completion
+    - iptables-persistent
+    - net-tools
+    - tmux
