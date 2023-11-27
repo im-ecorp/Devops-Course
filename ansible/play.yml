@@ -1,5 +1,5 @@
 - name: update and upgrade
-  hosts: c2
+  hosts: all
   gather_facts: true
   become: true
   roles:
